@@ -4,7 +4,6 @@ public class TestRectangle {
 	public static void main(String[] args) {
 		Rectangle rectangle1 = new Rectangle(4,40);
 		Rectangle rectangle2 = new Rectangle(3.5,35.9);
-		
 		System.out.println("Rectangle 1");
 		System.out.println("Width: " + rectangle1.width + ", Height " + rectangle1.height);
 		System.out.println("Area " + rectangle1.getArea());
