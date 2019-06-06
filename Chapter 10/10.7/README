@@ -1,1 +1,1 @@
-Account.java MUST be used with ATM.java
+Account.java MUST be used in same package (account) as ATM.java 
