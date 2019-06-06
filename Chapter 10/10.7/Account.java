@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 // blueprint
 public class Account {
-	private int id;						// default (0)
+	private int id;					// default (0)
 	private double balance;				// default (0)
-	private double annualInterestRate;	// stores current interest rate (default 0)
+	private double annualInterestRate;		// stores current interest rate (default 0)
 	private Date dateCreated;			// stores the date when account was created
 
 // constructor -- default account 
