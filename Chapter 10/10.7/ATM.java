@@ -1,6 +1,9 @@
-/* Game: ATM Machine 
-* Utilizes Account class
-*/
+/* Game: Simulated ATM machine
+ * Utilizes methods and constructors from Account class
+ * Accounts (ID #'s) are numbered 0 thru 9
+ * Initial balance in accounts is $100
+ * ATM loop never ends; prompts a new user to enter their "account" (ID)
+ */
 
 package account;
 
@@ -10,10 +13,9 @@ public class ATM {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Account atm = new Account();
-		int choice;
-		double withdraw;
+		int option;
 		
-	// create 10 accounts in an array w/ ID 0-9; initial balance of $100
+	// create 10 "accounts" in an array w/ ID 0-9; initial balance of $100
 	int [] bankAccountsID = new int [10];
 	double [] bankAccountsBal = new double [10];
 	
@@ -26,44 +28,62 @@ public class ATM {
 		bankAccountsBal[i] = 100;
 	}
 	
-	// prompt user to enter ID number; if incorrect ask user to enter correct number
-	
-	System.out.println("Enter an id: ");
+	// prompt user to enter ID number; if number does match "account #", asks user to enter correct number 
+	System.out.print("Enter an id: ");
 	atm.setId(input.nextInt());
-	atm.setBalance(bankAccountsBal[atm.getId()]); // set balance using array and id getter method
+	
+	// check ID number
+	while(true) {
+		if(atm.getId() < 0 || atm.getId() >= 10) {
+		System.out.println("Number is incorrect. Please enter correct number. "); 
+		System.out.print("Enter an id: ");
+		atm.setId(input.nextInt());
+		continue;
+	  } 
+	break;
+   }
+	
+	// set balance using array and id getter method; balance will be used in method formulas
+	atm.setBalance(bankAccountsBal[atm.getId()]); 
 	
 	while(true) {
-		if(atm.getId() < 0 && atm.getId() > 10) {
-			System.out.println("Number is incorrect. Please enter correct number: "); continue;
-	} else {
-		// continue code in while loop
-		System.out.println("Main menu");
+		// continue code in while loop  
+		System.out.println("\n***Main Menu***");
 		System.out.println("1. Check balance");
 		System.out.println("2. Withdraw");
 		System.out.println("3. Deposit");
 		System.out.println("4. Exit");
-		System.out.print("Enter a choice: ");
-		choice = input.nextInt();
-		switch(choice) {
-		case 1: System.out.println(atm.getBalance()); break;
+		System.out.print("Select an option: ");
+		option = input.nextInt();
+		switch(option) {
+		case 1: System.out.println("Balance: $" + bankAccountsBal[atm.getId()]); break;
 		case 2: System.out.println("Enter an amount to withdraw: ");
-				atm.withdraw(input.nextDouble());
-				System.out.println("Balance: $" + atm.getBalance()); break;
-		
-		case 3: atm.deposit(); break;
-		case 4: System.out.println("Goodbye"); break;
-		default: System.out.println("Invalid selection"); break;
+				bankAccountsBal[atm.getId()] = atm.withdraw(input.nextDouble());
+				System.out.println("New balance: $" + bankAccountsBal[atm.getId()]); break;
+		case 3: System.out.println("Enter an amount to deposit: ");
+				bankAccountsBal[atm.getId()] = atm.deposit(input.nextDouble());
+				System.out.println("New balance: $" + bankAccountsBal[atm.getId()]); break;
+		case 4: System.out.println("\nGoodbye"); break;
+		default: System.out.println("Invalid selection."); break;
 		}
-		
-		}
-		System.out.println("Enter an id: ");
+	
+		System.out.println("\nEnter an id: ");
 		atm.setId(input.nextInt());
-	} // end of while loop
+		
+		// check ID number 
+		while(true) {
+			if(atm.getId() < 0 || atm.getId() >= 10) {
+			System.out.println("Number is incorrect. Please enter correct number. "); 
+			System.out.print("Enter an id: ");
+			atm.setId(input.nextInt());
+			continue;
+		  }  else {
+			 break;
+		  }
+			
+		}
 	
-	// main menu displayed; user enters choice 1-4  
+	  } // end of while loop
 	
-	// exit system; prompt user for ID again; once system starts it will not stop
-	}
-	
-
+   }
 }
