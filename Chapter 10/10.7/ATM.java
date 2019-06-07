@@ -1,6 +1,7 @@
 /* Game: Simulated ATM machine
  * Utilizes methods and constructors from Account class
  * Accounts (ID #'s) are numbered 0 thru 9
+ * The PIN number for all accounts is 1234
  * Initial balance in accounts is $100
  * ATM loop never ends; prompts a new user to enter their "account" (ID)
  */
@@ -13,7 +14,7 @@ public class ATM {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Account atm = new Account();
-		int option;
+		int option, PIN;
 		
 	// create 10 "accounts" in an array w/ ID 0-9; initial balance of $100
 	int [] bankAccountsID = new int [10];
@@ -46,14 +47,26 @@ public class ATM {
 	// set balance using array and id getter method; balance will be used in method formulas
 	atm.setBalance(bankAccountsBal[atm.getId()]); 
 	
+	// check if user "account" is in "system" (in ID array)
 	while(true) {
-		// continue code in while loop  
+		if(atm.getId() < 0 && atm.getId() > 10) {
+			System.out.println("Number is incorrect. Please enter correct number: "); continue;
+	} else {
+		// user must enter PIN
+		System.out.println("Enter 4-digit PIN: ");
+		PIN = input.nextInt();
+		
+		// check PIN; prompt user if incorrect
+		while(PIN != 1234) {
+				System.out.println("PIN is incorrect. Try again.");
+				PIN = input.nextInt();
+		}
 		System.out.println("\n***Main Menu***");
 		System.out.println("1. Check balance");
 		System.out.println("2. Withdraw");
 		System.out.println("3. Deposit");
 		System.out.println("4. Exit");
-		System.out.print("Select an option: ");
+		System.out.print("\nSelect an option: ");
 		option = input.nextInt();
 		switch(option) {
 		case 1: System.out.println("Balance: $" + bankAccountsBal[atm.getId()]); break;
@@ -66,7 +79,7 @@ public class ATM {
 		case 4: System.out.println("\nGoodbye"); break;
 		default: System.out.println("Invalid selection."); break;
 		}
-	
+		// start new loop
 		System.out.println("\nEnter an id: ");
 		atm.setId(input.nextInt());
 		
@@ -83,7 +96,10 @@ public class ATM {
 			
 		}
 	
-	  } // end of while loop
+	  }
+		
+	}
 	
-   }
+  }
+	
 }
