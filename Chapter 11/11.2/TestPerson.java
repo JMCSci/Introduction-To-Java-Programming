@@ -18,7 +18,7 @@ public class TestPerson {
 	Steve.setName("Steve");		
 	Carol.setSalary(75000);					// set salary
 	Tina.setOfficeHours(5);					// set office hours
-	Tina.setRank(10);						// set rank		
+	Tina.setRank(10);					// set rank		
 	Steve.setTitle("CIO");					// set title
 	
 	System.out.println(Jane);
