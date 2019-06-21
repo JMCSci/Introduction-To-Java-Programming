@@ -11,7 +11,9 @@ public class IntegerMax {
 	IntegerMax() {
 	}
 
-// method max finds the maximum number in an ArrayList
+/* method max finds the maximum number in an ArrayList
+ * returns null if ArrayList does not contain any elements
+ */
 	public static Integer max(ArrayList<Integer> list) {
 		if(list.size() == 0) {
 			return null;
