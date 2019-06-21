@@ -16,7 +16,7 @@ public class TestIntegerMax {
 
 		/* asks for user input
 		 * checks if number is not equal to 0
-		 * if not, number is add to object
+		 * if not is not equal zero number is add to object
 		 */
 		do {	
 			x = input.nextInt();
@@ -24,7 +24,7 @@ public class TestIntegerMax {
 				list.add(x);
 
 		} while(x != 0);
-		System.out.println(IntegerMax.max(list));
+		System.out.println("Maximum number is: " + IntegerMax.max(list));
 		input.close();
 	}
 }
