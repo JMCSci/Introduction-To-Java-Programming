@@ -14,13 +14,11 @@ public class TestIntegerMax {
 		System.out.println("Enter a sequence of numbers. The last number should be 0: ");	
 		int x;
 
-		/* asks for user input
-		 * checks if number is not equal to 0
-		 * if not is not equal zero number is add to object
+		/* asks for user input first
+		 * checks while condition if true does it again
 		 */
 		do {	
 			x = input.nextInt();
-			if(x != 0) 
 				list.add(x);
 
 		} while(x != 0);
