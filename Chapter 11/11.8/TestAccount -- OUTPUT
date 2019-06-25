@@ -1,0 +1,40 @@
+Account name: George
+Interest Rate: 1.5%
+Balance: $1109.0
+ 
+Type: D
+Amount: $30.0
+Balance: $1030.0
+Description: Deposit
+Date: Mon Jun 24 21:01:03 EDT 2019
+  
+Type: D
+Amount: $40.0
+Balance: $1070.0
+Description: Deposit
+Date: Mon Jun 24 21:01:03 EDT 2019
+  
+Type: D
+Amount: $50.0
+Balance: $1120.0
+Description: Deposit
+Date: Mon Jun 24 21:01:03 EDT 2019
+  
+Type: W
+Amount: $5.0
+Balance: $1115.0
+Description: Withdrawal
+Date: Mon Jun 24 21:01:03 EDT 2019
+  
+Type: W
+Amount: $4.0
+Balance: $1111.0
+Description: Withdrawal
+Date: Mon Jun 24 21:01:03 EDT 2019
+  
+Type: W
+Amount: $2.0
+Balance: $1109.0
+Description: Withdrawal
+Date: Mon Jun 24 21:01:03 EDT 2019
+ 
