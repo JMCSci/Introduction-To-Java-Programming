@@ -114,7 +114,7 @@ public class Account {
 	@Override
 		public String toString() {
 		String x = "Account name: " + getName() + "\nInterest Rate: " + annualInterestRate() + "%" +  
-				"\nBalance: " + getBalance() +  "\n" + transactions.toString();
+				"\nBalance: $" + getBalance() +  "\n" + transactions.toString();
 		// removes brackets and comma from printed string (ArrayList)
 		return x.replace("[" , " ").replace("]", " ").replace(",", " ");
 			
