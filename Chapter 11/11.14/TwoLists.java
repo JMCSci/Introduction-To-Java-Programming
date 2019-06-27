@@ -35,7 +35,7 @@ public class TwoLists {
 		return list1;
 	}
 	
-	// print ArrayList
+// print ArrayList
 	public static void printArray(ArrayList<Integer> list1) {
 		System.out.print("The combined list is: ");
 		for(int i = 0; i < list1.size(); i++) {
