@@ -1,6 +1,6 @@
 /* Chapter 14.2
  * Tic Tac Toe board
- * Image placement is randomly chosen
+ * Image placement is chosen randomly
  */
 
 package tictactoe;
