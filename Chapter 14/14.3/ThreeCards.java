@@ -22,30 +22,30 @@ public class ThreeCards extends Application {
 		String card1, card2, card3;									
 		insertNumbers(num);		
 		shuffleArray(num);
-		card1 = Integer.toString(num.get(0));					            	// Changes integer to a String
-		card2 = Integer.toString(num.get(1));			          		  	// Changes integer to a String
-		card3 = Integer.toString(num.get(2));			          		  	// Changes integer to a String
+		card1 = Integer.toString(num.get(0));				    // Changes integer to a String
+		card2 = Integer.toString(num.get(1));			            // Changes integer to a String
+		card3 = Integer.toString(num.get(2));			            // Changes integer to a String
 		
-		Pane pane = new HBox(5);								                  	// Image spacing
-		pane.setPadding(new Insets(10,10,10,10));			        	  	// Spacing around pane
+		Pane pane = new HBox(5);					    // Image spacing
+		pane.setPadding(new Insets(10,10,10,10));			    // Spacing around pane
 		
-		Image image1 = new Image("file:Cards/" + card1 + ".png"); 	// Uses String variable a for numbered file name
+		Image image1 = new Image("file:Cards/" + card1 + ".png"); 	    // Uses String variable a for numbered file name
 		ImageView imageView1 = new ImageView(image1);
 		imageView1.setFitHeight(175);
 		imageView1.setFitWidth(125);
-		pane.getChildren().add(imageView1);							            // Adds image to pane
+		pane.getChildren().add(imageView1);		 		    // Adds image to pane
 		
-		Image image2 = new Image("file:Cards/" + card2 + ".png"); 	// Uses String variable a for numbered file name
+		Image image2 = new Image("file:Cards/" + card2 + ".png"); 	    // Uses String variable a for numbered file name
 		ImageView imageView2 = new ImageView(image2);
 		imageView2.setFitHeight(175);
 		imageView2.setFitWidth(125);
-		pane.getChildren().add(imageView2);							            // Adds image to pane
+		pane.getChildren().add(imageView2);				   // Adds image to pane
 
-		Image image3 = new Image("file:Cards/" + card3 + ".png");	  // Uses String variable a for numbered file name
+		Image image3 = new Image("file:Cards/" + card3 + ".png");	   // Uses String variable a for numbered file name
 		ImageView imageView3 = new ImageView(image3);
 		imageView3.setFitHeight(175);
 		imageView3.setFitWidth(125);	
-		pane.getChildren().add(imageView3);							            // Adds image to pane
+		pane.getChildren().add(imageView3);			 	   // Adds image to pane
 		
 		Scene scene = new Scene(pane);
 		primaryStage.setTitle("Three Cards");
