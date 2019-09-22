@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -24,6 +26,9 @@ public class RotateRectangle extends Application {
 		// Pane to place HBox and BorderPane
 		StackPane root = new StackPane();
 		
+		// Pane for Text object
+		Pane pane = new Pane();
+		
 		// Container for button BorderPane
 		HBox hbox = new HBox();
 		hbox.setPadding(new Insets(0, 10, 10, 0));
@@ -32,6 +37,12 @@ public class RotateRectangle extends Application {
 		// BorderPane for rectangle and button
 		BorderPane bPane = new BorderPane();
 		BorderPane rPane = new BorderPane();
+		
+		// Text object
+		Text t1 = new Text("Rotate the rectangle by clicking the Rotate button");
+		t1.setLayoutX(50);
+		t1.setLayoutY(50);
+		pane.getChildren().add(t1);
 		
 		// Rectangle object
 		Rectangle rectangle = new Rectangle(200, 100);
@@ -51,7 +62,7 @@ public class RotateRectangle extends Application {
 		});
 		
 		// StackPane 
-		root.getChildren().addAll(bPane, rPane, hbox);
+		root.getChildren().addAll(bPane, rPane, pane, hbox);
 		
 		Scene scene = new Scene(root, 400, 400);
 		primaryStage.setScene(scene);
