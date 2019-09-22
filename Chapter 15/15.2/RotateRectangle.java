@@ -1,5 +1,5 @@
 /* Chapter 15.2
- * Program rotates a rectangle 15 degrees right when Rotate button is clicked
+ * Program rotates a rectangle 15 degrees when Rotate button is clicked
  */
 
 package rotaterectangle;
