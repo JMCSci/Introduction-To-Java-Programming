@@ -27,35 +27,35 @@ public class DrawLines extends Application {
 		// Create ObservableList array
 		// List that allows listeners to track when changes occur
 		ObservableList<Double> list = poly.getPoints();
-		list.add(200.0);										                                     	// x-coordinate
-		list.add(200.0);									                        		            // y-coordinate
+		list.add(200.0);										// x-coordinate
+		list.add(200.0);									        // y-coordinate
 
 		/* EVENT: Use keypad to create lines in pane 
 		 * startX and startY variables used to get x and y values from array
 		 * Example: startX(0) and startY(1), startX(2) and startY(3), etc.
 		 */
 		poly.setOnKeyPressed(e -> { 
-			startX = list.get(indexX);								                              // save x-coordinate to variable
-			startY = list.get(indexY);							                              	// save y-coordinate to variable
+			startX = list.get(indexX);							       // save x-coordinate to variable
+			startY = list.get(indexY);							       // save y-coordinate to variable
 			
 			// Switch conditional gets KeyCode (UP, DOWN, LEFT, or RIGHT)
 			switch(e.getCode()) {	
-			case UP:    startY = startY - 5;						
-					    poly.getPoints().addAll(startX, startY);	                      // add lines to pane
-					    indexX += 2;								                                    // increases x-coordinate index by 2 
-					    indexY += 2; break;				                                			// increases y-coordinate index by 2
+			case UP:             startY = startY - 5;						
+					     poly.getPoints().addAll(startX, startY);	                       // add lines to pane
+					     indexX += 2;						       // increases x-coordinate index by 2 
+					     indexY += 2; break;				               // increases y-coordinate index by 2
 			case DOWN:  startY = startY + 5;
-					    poly.getPoints().addAll(startX, startY);
-					    indexX += 2;
-					    indexY += 2; break;
+					     poly.getPoints().addAll(startX, startY);
+					     indexX += 2;
+					     indexY += 2; break;
 			case LEFT:  startX = startX - 5;
-					    poly.getPoints().addAll(startX, startY);
-					    indexX += 2; 
-					    indexY += 2; break;
+					     poly.getPoints().addAll(startX, startY);
+					     indexX += 2; 
+					     indexY += 2; break;
 			case RIGHT: startX = startX + 5;
-						poly.getPoints().addAll(startX, startY);
-						indexX += 2;
-						indexY += 2; break;
+					     poly.getPoints().addAll(startX, startY);
+				             indexX += 2;
+					     indexY += 2; break;
 			}	
 		});
 
@@ -68,7 +68,7 @@ public class DrawLines extends Application {
 		primaryStage.show();
 		
     // Allows object to receive key input    
-		poly.requestFocus();                                                     // must be used after stage is set       
+		poly.requestFocus();                                                     		      // must be used after stage is set       
 	}
 	
 	public static void main(String[] args) {
