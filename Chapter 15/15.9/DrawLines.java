@@ -67,7 +67,7 @@ public class DrawLines extends Application {
 		primaryStage.setResizable(false);
 		primaryStage.show();
 		
-    // Allows object to receive key input    
+    		// Allows object to receive key input    
 		poly.requestFocus();                                                     		      // must be used after stage is set       
 	}
 	
