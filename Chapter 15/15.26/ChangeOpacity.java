@@ -48,6 +48,7 @@ public class ChangeOpacity extends Application {
 		path.setPath(arc);
 		path.setAutoReverse(true);
 		path.setCycleCount(Timeline.INDEFINITE);
+		// Slows down the animation by 50%
 		path.setRate(0.50);
 		path.play();
 		
