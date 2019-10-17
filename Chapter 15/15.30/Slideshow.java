@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Slideshow extends Application {
-	private int buttonClick = 0;				  	    // Binary condition -- used to determine if animation is paused
-	private int counter = 0;					        	// Used for image filename (ex. 0.jpg)
+	private int buttonClick = 0;				  	// Binary condition -- used to determine if animation is paused
+	private int counter = 0;					// Used for image filename (ex. 0.jpg)
 	private String fileNum = null;				    	// Used for image filename conversion to a string
 	
 	public void start(Stage primaryStage) {
@@ -35,7 +35,7 @@ public class Slideshow extends Application {
 			@Override
 			public void handle(ActionEvent e) {
 				fileNum = Integer.toString(counter);
-				Image image = new Image("file:Images/" + fileNum + ".jpg");
+				Image image = new Image("file:" + fileNum + ".jpg");
 				ImageView iView = new ImageView(image);
 				pane.getChildren().add(iView);
 				counter++;
