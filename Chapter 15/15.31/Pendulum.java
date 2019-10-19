@@ -20,7 +20,7 @@ import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 public class Pendulum extends Application {
-	private double maxRate = 0.50;					                      // Set default pendulum speed 
+	private double maxRate = 0.50;					      // Set default pendulum speed 
 	private double rate = 0;
 	
 	public void start(Stage primaryStage) {
@@ -65,23 +65,23 @@ public class Pendulum extends Application {
 				rate = path1.getRate();
 				
 				switch (e.getCode()) {
-					case UP:  		if(rate >= maxRate) {
-					 				break;
-								    } else {
-								    	path1.setRate(rate + 0.05);
-								    }
-									break;
-					case DOWN: 	    if(rate == 0) {
-									break;
-									} else {
-										path1.setRate(rate - 0.05);
-									}
-							        break;
-					case S:    	    path1.pause();
-							        break;
-					case R:    	    path1.play();
-								    break;
-					default:		break;
+					case UP:       if(rate >= maxRate) {
+					 		break;
+						       } else {
+							path1.setRate(rate + 0.05);
+						       }
+						       break;
+					case DOWN:     if(rate == 0) {
+						        break;
+						       } else {
+						       path1.setRate(rate - 0.05);
+						       }
+						       break;
+					case S:        path1.pause();
+						       break;
+					case R:        path1.play();
+						       break;
+					default:       break;
 				}
 			}
 		};
