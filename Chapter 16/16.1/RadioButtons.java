@@ -12,24 +12,29 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleGroup;
 import javafx.geometry.Insets;
 import javafx.scene.paint.Color;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.Pane;
 import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 import javafx.geometry.Pos;
 
 public class RadioButtons extends Application {
+	double x = 0;
 	public void start(Stage primaryStage) {
 		BorderPane bpane = new BorderPane();
 		
-		Text text = new Text("Programming is fun");
-		Font font = new Font(25);
-		text.setFont(font);
+		Pane pane = new Pane();
 		
-		bpane.setCenter(text);
+		Text text = new Text("Programming is fun");
+		text.setFont(Font.font("Times New Roman", FontWeight.BOLD, 25));
+		text.setX(95);
+		text.setY(60);
 		
 		HBox hbox1 = new HBox();
 		hbox1.setPadding(new Insets(10,10,10,10));
@@ -39,8 +44,8 @@ public class RadioButtons extends Application {
 		hbox2.setPadding(new Insets(10, 10, 10, 10));
 		hbox2.setSpacing(10);
 
-		Button b1 = new Button("<=");
-		Button b2 = new Button("=>");
+		Button left = new Button("<=");
+		Button right = new Button("=>");
 		
 		RadioButton rbutton1 = new RadioButton("Red");
 		RadioButton rbutton2 = new RadioButton("Orange");
@@ -54,8 +59,9 @@ public class RadioButtons extends Application {
 		rbutton3.setToggleGroup(group);
 		rbutton4.setToggleGroup(group);
 		rbutton5.setToggleGroup(group);
-
-		hbox1.getChildren().addAll(b1, b2);
+		
+		pane.getChildren().add(text);
+		hbox1.getChildren().addAll(left, right);
 		hbox1.setAlignment(Pos.BASELINE_CENTER);
 		hbox2.getChildren().addAll(rbutton1, rbutton2, rbutton3, rbutton4, rbutton5);
 		hbox2.setAlignment(Pos.TOP_CENTER);
@@ -80,17 +86,40 @@ public class RadioButtons extends Application {
 			text.setFill(Color.GREEN);
 		});
 		
+		EventHandler<MouseEvent> event1 = new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				x = text.getX();
+				if(x >= 10) {
+					text.setX(x - 10);
+				}
+				
+			}
+		};
 		
+		EventHandler<MouseEvent> event2 = new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				x = text.getX();
+				if(x <= 180) {
+					text.setX(x + 10);
+				}
+			}
+		};
+		
+		left.setOnMouseClicked(event1);
+		right.setOnMouseClicked(event2);
 		
 		bpane.setBottom(hbox1);
 		bpane.setTop(hbox2);
+		bpane.setCenter(pane);
+		pane.setStyle("-fx-border-color: black;");
 		hbox1.setStyle("-fx-border-color: black;");
 		hbox2.setStyle("-fx-border-color: black;");
 
-		Scene scene = new Scene(bpane, 400, 200);
+		Scene scene = new Scene(bpane, 405, 200);
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		
 	}
 	
 	public static void main(String[] args) {
