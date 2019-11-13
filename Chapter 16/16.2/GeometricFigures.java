@@ -93,6 +93,7 @@ public class GeometricFigures extends Application {
 		// Add StackPane to scene
 		Scene scene = new Scene(root, 400, 200);
 		primaryStage.setScene(scene);
+		primaryStage.setTitle("Geometric Figures");
 		primaryStage.show();
 	}
 	
