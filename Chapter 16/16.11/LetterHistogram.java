@@ -43,6 +43,7 @@ public class LetterHistogram extends Application {
 		Scene scene = new Scene(bpane, 435, 350);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Letter Frequency Histogram");
+		primaryStage.setResizable(false);
 		primaryStage.show();
 	}
 	
