@@ -1,7 +1,7 @@
 /* Chapter 16.11
  * Program displays a histogram to show occurrences of each letter in a file
  * File name entered in a text field 
- * Pressing ENTER key in text field causes program to start
+ * Pressing VIEW button causes program to start
  * File is processed and histogram is displayed in center of window
  * Shows how to create a GUI in another class and send pane to main method
  */
