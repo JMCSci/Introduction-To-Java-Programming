@@ -82,7 +82,7 @@ public class Counts extends Pane {
 		b1.setOnAction(e -> {
 			// Clears sum data field
 			sum = 0;
-			
+			list.clear();
 			try {	
 			filename = tf.getText();
 			Scanner input = new Scanner(new File(filename));
@@ -199,8 +199,8 @@ public class Counts extends Pane {
 				// Creates rectangle objects (uses counts array elements for height) 
 				for(int i = 0; i < counts.length; i++) {
 					Rectangle rectangle = new Rectangle(10, counts[i]);
-					rectangle.setFill(Color.TRANSPARENT);
-					rectangle.setStroke(Color.BLACK);		
+					rectangle.setFill(Color.BLUE);
+					rectangle.setStroke(Color.BLUE);		
 					list.add(rectangle);
 			}
 			// Add vbox to BorderPane
@@ -211,6 +211,7 @@ public class Counts extends Pane {
 				// Prints "File Not Found" to pane if incorrect filename is entered
 				Label lb3 = new Label("File Not Found");
 				bpane.setCenter(lb3);
+				list.clear();
 			}
 		});
 		
