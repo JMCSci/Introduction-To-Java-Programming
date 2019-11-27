@@ -1,6 +1,6 @@
 /* Chapter 18.4 
  * Program computes a series of ith numbers using recursion
- * Series: m(i) = 1 + 1/2, 1/3 + ... + 1/i;
+ * Series: m(i) = 1 + 1/2 + 1/3 + ... + 1/i;
  */
 
 package sumseries;
