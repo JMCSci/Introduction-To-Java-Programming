@@ -20,6 +20,7 @@ public class RDisplay {
 			newInt = Integer.parseInt(temp);
 			System.out.println(reverseNumber);
 		} else {
+			// RECURSION - calls reverseDisplay until base condition is met
 			removed = temp.charAt(stringLength - 1);
 			charTemp = Character.toString(removed);
 			reverseNumber = reverseNumber.concat(charTemp);
