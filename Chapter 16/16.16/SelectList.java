@@ -26,6 +26,7 @@ public class SelectList extends Application {
 		// Create scene
 		Scene scene = new Scene(bpane, 380, 150);
 		primaryStage.setScene(scene);
+		primaryStage.setResizable(false);
 		primaryStage.setTitle("Various Countries");
 		primaryStage.show();
 	}
