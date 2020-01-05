@@ -52,11 +52,11 @@ public class ReviseGeneric {
 		return list = tempArray;
 	}
 	
-	// Array shrink(?) 
+	// Does array shrink(?) 
 	// Return and remove top element in stack
 	public static String pop() {
-		// If shrink array, leave tempArray as-is
-		// If no shrink, remove minus 1
+		// If array strinks, leave tempArray as-is
+		// If it doesn't strink, remove list.length - 1
 		String [] tempArray = new String [list.length - 1];
 		String popValue = list[(list.length / 2) - 1];
 		// Take array divide by 2 and copy the bottom elements
