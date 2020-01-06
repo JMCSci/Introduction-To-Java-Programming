@@ -7,8 +7,10 @@
 package revisegeneric;
 
 public class ReviseGeneric {
-	static int size = 3;
-	static String [] list = new String [size];
+	static int size = 0;
+	static String [] list = new String [3];
+	static boolean even = false;
+	static boolean open = false;
 	
 	ReviseGeneric() {
 		list[0] = "London";
@@ -18,47 +20,102 @@ public class ReviseGeneric {
 	
 	// Check size of array
 	public static int getSize() {
-		return list.length;
+		if(list.length % 2 == 0) {
+			even = true;
+		}
+		size = list.length;
+		return size;
 	}
+	
 	
 	// Create new array if full; if not return original list
 	public static String[] newArray() {
-		// Check if empty; if not, create new array and double size
-			if(list[0].isEmpty() == false) {
-				int newSize = size * 2;
-				String [] newList = new String [newSize];
-				// Copy elements over and return new array
-				for(int j = 0; j < list.length; j++) {
-					newList[j] = list[j];
-				}
-				return list = newList;
-			} 
+		getSize();
+		openElement();
+		if(open == false) {
+			size = size * 2;
+			String [] newList = new String [size];
+			// Create new array and double size
+			for(int i = list.length - 1; i  >= 0; i--) {
+				newList[(newList.length - 1) - i] = list[(list.length - 1) - i];
+			}
+			return list = newList;	
+		} 
 		return list;
+		
 	}
 	
 	// Check element in first position of array
-	public static String peek() {		
-		return list[0];
+	public static String peek() {
+		getSize();
+		String temp = "";
+		for(int i = list.length - 1; i >= 0; i--) {
+			if(list[i] == null) {
+				temp = list[i + 1];
+				break;
+			} else {
+				temp = list[0];
+			}
+		}
+		return temp;
+	}
+	
+	public static void openElement() {
+		for(int i = list.length - 1; i >= 0; i--) {
+			if(list[i] == null) {
+				open = true;
+				break;
+			}
+			open = false;
+		}
+		
 	}
 	
 	// Move elements down (1 element) in array, add new element to top of stack
 	public static String[] push(String newValue) {
-		String [] tempArray = new String[list.length];
-		for(int i = 0; i < list.length / 2; i++) {
-			tempArray[(tempArray.length - 1) - i] = list[i];
+		getSize();
+		newArray();
+		if(open = false) {
+			if(even == true) {
+				String [] tempArray = new String[list.length];
+				for(int i = 0; i < list.length / 2; i++) {
+					tempArray[(tempArray.length - 1) - i] = list[i];
+				}
+				// Add element to top of stack
+				tempArray[(list.length / 2) - 1] = newValue;
+				return list = tempArray;
+			}
+			String [] tempArray = new String[list.length];
+			for(int i = 0; i < list.length / 2; i++) {
+				tempArray[(tempArray.length - 1) - i] = list[i];
+			}
+			// Add element to top of stack
+			tempArray[(list.length / 2) - 1] = newValue;
+			list = tempArray;
+			return list;
 		}
-		// Add element to top of stack
-		tempArray[(list.length / 2) - 1] = newValue;
-		return list = tempArray;
+		// Add pushed to top of stack
+		for(int i = list.length - 1; i >= 0; i--) {
+			if(list[i] == null) {
+				list[i] = newValue;
+				break;
+			}
+		}
+		return list;
 	}
 	
 	// Does array shrink(?) 
 	// Return and remove top element in stack
+	// REWRITE
 	public static String pop() {
-		// If array strinks, leave tempArray as-is
-		// If it doesn't strink, remove list.length - 1
+		getSize();
+		// If array shrinks, leave tempArray as-is
+		// If it doesn't, remove list.length - 1
 		String [] tempArray = new String [list.length - 1];
-		String popValue = list[(list.length / 2) - 1];
+		if(list.length % 2 == 0) {
+			String popValue = list[(list.length / 2) - 1];
+		}
+		String popValue = list[list.length / 2];
 		// Take array divide by 2 and copy the bottom elements
 		for(int i = 0; i < list.length / 2; i++) {
 			tempArray[(tempArray.length - 1) - i] = list[(list.length - 1) - i];
@@ -69,6 +126,7 @@ public class ReviseGeneric {
 	
 	// printArray: Print contents of array
 	public static void printArray() {
+		getSize();
 		for(int i = 0; i < list.length; i++) {
 			System.out.println(list[i]);
 		}
