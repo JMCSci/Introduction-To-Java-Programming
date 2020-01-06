@@ -45,7 +45,6 @@ public class ReviseGeneric {
 			return list = newList;	
 		} 
 		return list;
-		
 	}
 	
 	/* peek: Return first element at top of stack */
@@ -126,14 +125,14 @@ public class ReviseGeneric {
 						// Copy array to new array w/o pop value and null values
 						list = copyArray(newSize);
 						break;
-						}
-							
+						}				
 					}
-						
+				
 				} else {
+					// Pop value is first element in array
 					popValue = list[0];
-					// Size of array will be current array size plus 1 b/c value in method is minus 2
-					// Remember pop value will not be included
+					// Size of array will be current array size plus 1 b/c value method includes minus 2
+					// Remember pop value will not be included in array
 					// Copy array to new array w/o element at top of stack
 					size = getSize() + 1;
 					copyArray(size);
@@ -141,7 +140,7 @@ public class ReviseGeneric {
 		return popValue;
 	}
 	
-	/* copyArray: Copy contents of array to another */
+	/* copyArray: Copy contents of array to another array */
 	public static String [] copyArray(int newSize) {
 		// Minus 2 because we do not want to include pop value
 		String[] newArray = new String[newSize - 2];
@@ -159,6 +158,4 @@ public class ReviseGeneric {
 			System.out.println(list[i]);
 		}
 	}
-
-
 }
