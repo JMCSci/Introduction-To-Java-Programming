@@ -1,4 +1,5 @@
 # Introduction-To-Java-Programming
 Completed Exercises
 
-My solutions to Daniel Liang's Introduction to Java Programming (Comprehensive Edition) 10th Edition
+My solutions to Daniel Liang's Introduction to Java Programming 10th Edition (Comprehensive Version)
+
