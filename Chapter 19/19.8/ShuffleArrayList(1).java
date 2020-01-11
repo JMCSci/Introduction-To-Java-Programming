@@ -1,6 +1,6 @@
 /* Chapter 19.8 
  * Program shuffles a generic ArrayList
- * Version #1 uses Collection library to shuffle array
+ * Version #1 uses the Collections library to shuffle list
  */
 
 package shufflearraylist;
@@ -8,7 +8,7 @@ package shufflearraylist;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ShuffleArrayList {
+public class ShuffleArrayList_1 {
 	public static void main(String[] args) {
 		ArrayList<Integer> list1 = new ArrayList<Integer>();
 		ArrayList<String> list2 = new ArrayList<String>();
@@ -34,10 +34,12 @@ public class ShuffleArrayList {
 		printArray(list1);
 	}
 	
+	// shuffle: Shuffles ArrayList
 	public static <E> void shuffle(ArrayList<E> list) {
 		Collections.shuffle(list); 
 	}
 	
+	// printArray: Prints array contents
 	public static <E> void printArray(ArrayList<E> list) {
 		for(int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
