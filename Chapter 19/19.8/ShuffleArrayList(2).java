@@ -1,5 +1,5 @@
 /* Chapter 19.8 
- * Program shuffles a generic ArrayList
+ * Program shuffles an generic ArrayList
  * Version #2 uses a random number generator and duplicate number checker to shuffle list
  */
 
@@ -8,7 +8,7 @@ package shufflearraylist;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class ShuffleArrayList {
+public class ShuffleArrayList_2 {
 	public static void main(String[] args) {
 		ArrayList<Integer> list1 = new ArrayList<Integer>();
 		ArrayList<String> list2 = new ArrayList<String>();
@@ -23,15 +23,16 @@ public class ShuffleArrayList {
 		list2.add("Henry");
 		list2.add("Tom");
 		System.out.println("Unshuffled List");
-		printArray(list1);
+		System.out.println(list1);
 		shuffle(list1);
 		System.out.println("Shuffled List");
-		printArray(list1);
+		System.out.println(list1);
+		System.out.println();
 		System.out.println("Unshuffled List");
-		printArray(list2);
+		System.out.println(list2);
 		shuffle(list2);
 		System.out.println("Shuffled List");
-		printArray(list2);
+		System.out.println(list2);
 	}
 	
 	// shuffle: Shuffles ArrayList
