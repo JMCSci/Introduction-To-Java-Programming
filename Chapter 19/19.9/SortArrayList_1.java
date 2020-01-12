@@ -6,9 +6,8 @@
 package sortarraylist;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class SortArrayList {
+public class SortArrayList_1 {
 	public static void main(String[] args) {
 		ArrayList<Integer> list1 = new ArrayList<Integer>();
 		ArrayList<String> list2 = new ArrayList<String>();
@@ -19,10 +18,10 @@ public class SortArrayList {
 		list1.add(21);
 		list1.add(15);
 		System.out.println("Unsorted List");
-		printArray(list1);
+		System.out.println(list1);
 		sort(list1);
 		System.out.println("Sorted List");
-		printArray(list1);
+		System.out.println(list1);
 		
 		list2.add("Sally");
 		list2.add("Mark");
@@ -30,11 +29,12 @@ public class SortArrayList {
 		list2.add("Lisa");
 		list2.add("Sherry");
 		list2.add("Billy");
+		System.out.println();
 		System.out.println("Unsorted List");
-		printArray(list2);
+		System.out.println(list2);
 		sort(list2);
 		System.out.println("Sorted List");
-		printArray(list2);
+		System.out.println(list2);
 	}
 	
 	// sort: Sorts list using Bubble Sort algorithm
