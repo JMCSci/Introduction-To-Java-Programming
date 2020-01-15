@@ -30,7 +30,7 @@ public class DisplayWords {
 		
 		sortArray(list);
 		
-		// Loop through list 
+		// Loop through list and display contents
 		for(String temp: list) {
 			System.out.println(temp);
 		}
