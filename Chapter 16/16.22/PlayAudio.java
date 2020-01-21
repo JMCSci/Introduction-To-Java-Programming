@@ -6,6 +6,7 @@
 package playaudio;
 
 import javafx.application.Application;
+
 import javafx.scene.control.Button;
 import javafx.scene.media.AudioClip;
 import javafx.scene.layout.HBox;
@@ -15,7 +16,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class PlayAudio extends Application {
-	public void start(Stage primaryStage) {
+	boolean playing = false;
+
+	public void start(Stage primaryStage) {		
 		// Create StackPane object
 		// StackPane used so children remain centered in pane
 		StackPane root = new StackPane();
@@ -36,13 +39,27 @@ public class PlayAudio extends Application {
 		
 		// EVENT -- Play audio clip
 		b1.setOnAction(e -> {
-			beat.play();
+			if(playing == false) {
+				playing = true;
+				beat.play();
+			} else {
+				beat.stop();
+				beat.play();
+			}
 		});
 		
 		// EVENT -- Loop audio clip
 		b2.setOnAction(e -> {
-			beat.setCycleCount(AudioClip.INDEFINITE);
-			beat.play();
+			if(playing == false) {
+				playing = true;
+				beat.setCycleCount(AudioClip.INDEFINITE);
+				beat.play();
+			} else {
+				beat.stop();
+				beat.setCycleCount(AudioClip.INDEFINITE);
+				beat.play();
+			}
+			
 		});
 		
 		// EVENT -- Stop audio clip
