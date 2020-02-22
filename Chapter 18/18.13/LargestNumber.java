@@ -21,7 +21,7 @@ public class LargestNumber {
 			i++;
 		}
 		max = largestNumber(array, count, max);
-		System.out.println(max);
+		System.out.println("The largest number is: " + max);
 		input.close();
 	}
 	
