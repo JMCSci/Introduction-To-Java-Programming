@@ -1,0 +1,12 @@
+On June 24, 2020, engineers completed the Space Launch System (SLS) rocket’s structural testing campaign for the Artemis lunar missions by testing the liquid oxygen
+structural test article to find its point of failure.
+
+“The Space Launch System and Marshall test team have done a tremendous job of accomplishing this test program, marking a major milestone not only for the SLS Program but also
+for the Artemis program,” said John Honeycutt, the SLS Program Manager. “From building the test stands, support equipment and test articles to conducting the tests and
+analyzing the data, it is remarkable work that will help send astronauts to the Moon.”
+
+For the final test, the liquid oxygen tank test article -- measuring 70 feet tall and 28 feet in diameter -- was bolted into a massive 185,000-pound steel ring at the base of
+Marshall’s Test Stand 4697. Hydraulic cylinders were then calibrated and positioned all along the tank to apply millions of pounds of crippling force from all sides while
+engineers measured and recorded the effects of the launch and flight forces. The liquid oxygen tank circumferentially failed in the weld location as engineers predicted and
+at the approximate load levels expected, proving flight readiness and providing critical data for the tank's designers. The test concluded at approximately 9 p.m. CT. This
+final test on the liquid oxygen structural test article met all the program milestones.

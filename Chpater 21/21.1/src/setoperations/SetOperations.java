@@ -1,8 +1,8 @@
+/* Chapter 21.1 */
+
 package setoperations;
 
-import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.Set;
 import java.util.Arrays;
 
 public class SetOperations {
