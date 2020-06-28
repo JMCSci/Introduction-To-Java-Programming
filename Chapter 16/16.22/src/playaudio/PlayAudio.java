@@ -35,7 +35,7 @@ public class PlayAudio extends Application {
 		
 		// Create AudioClip object
 		// Uses File class
-		AudioClip beat = new AudioClip("file:beat.mp3");
+		AudioClip beat = new AudioClip("file:/Users/jasonmoreau/Desktop/alert.mp3");
 		
 		// EVENT -- Play audio clip
 		b1.setOnAction(e -> {
