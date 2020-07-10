@@ -40,6 +40,7 @@ public class GuessCapitals {
 					state = tokens2[0].toUpperCase();
 					if(state.contains("_")) {
 						state = tokens2[0].replace("_", " ");
+						state = state.toUpperCase();
 					}
 					if(state.contains("(")) {
 						state = state.replaceAll("\\(.*\\)", ""); 
