@@ -20,22 +20,6 @@ public class SetOperations {
 		
 		list1.retainAll(list2);
 		System.out.println(list1);
-		
-		
-		ArrayList<String> arr1 = new ArrayList<>();
-		ArrayList<String> arr2 = new ArrayList<>();
-		arr1.add("Tim");
-		arr1.add("Jason");
-		arr2.add("Lisa");
-		arr2.add("Tim");
-//		arr1.addAll(arr2);
-//		arr1.removeAll(arr2);
-//		arr2.retainAll(arr1);
-//		System.out.println(arr2);
-		
-		
-		
-		
 	}
 
 }
