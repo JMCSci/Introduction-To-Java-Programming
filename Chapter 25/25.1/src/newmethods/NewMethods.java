@@ -102,10 +102,12 @@ class TreeNode {
 			return -1;
 		} else {
 			if(left != null) {
+				System.out.println("LEFT");
 				height = 1 + left.height();
 			}
 			
 			if(right != null) {
+				System.out.println("RIGHT");
 				height = 1 + right.height();
 			}
 						
