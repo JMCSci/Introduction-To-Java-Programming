@@ -36,7 +36,9 @@ class TreeNode {
 	
 	void insert(int value) {
 		if(root == null) {
+			this.data = value;
 			root = this;
+			return;
 		}
 		TreeNode node = new TreeNode(value);
 		TreeNode current = root;
